@@ -1,0 +1,23 @@
+QUESTION 1:
+Solution using remainder:
+
+boolean checkIfIsEven(int number) {
+	if((number % 2) == 0) {
+		return true;
+   	} else {
+		return false;
+	}
+}
+
+boolean checkIfIsEvenWithoutDivisonOrRemainder(int number) {
+	boolean isEven = true;
+
+	for(int i = 1; i <= number; i++) {
+		isEven = !isEven;
+	}
+	return isEven;
+}
+
+
+QUESTION 2:
+The current operational systems and many programming languages work with several instructions simultaneously for the computer to execute, these instructions are called threads. StringBuffer allows only one thread at a time to be executed on it in a synchronized way, so it is much slower but called Thread safe because you don't have the risk of two threads running at the same time and one overwriting the other, while the StringBuilder can receive several threads at the same time, so it is faster and not thread safe. So when you create a string that will receive only one value at a time you use StringBuilder and if you are going to receive multiple values simultaneously you use StringBuffer.

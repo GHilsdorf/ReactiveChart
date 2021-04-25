@@ -6,6 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
+/**
+ * Class used to create the user object.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,6 +17,12 @@ import javax.persistence.*;
 @Table(name = "user")
 public class User {
 
+    /**
+     * <b>Warning:</b> If new region values are added in the database, they need
+     * to be included here before avoiding issues with the JPA persistence. The
+     * database int values should follow the ENUM sequence, where UNITED_STATES
+     * = 0, EUROPE = 1, etc.
+     */
     private enum region {
         UNITED_STATES, EUROPE, APAC, LATIN_AMERICA;
     }

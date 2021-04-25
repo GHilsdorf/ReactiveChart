@@ -23,17 +23,30 @@ public class User {
      * database int values should follow the ENUM sequence, where UNITED_STATES
      * = 0, EUROPE = 1, etc.
      */
-    private enum region {
+    public static enum region {
         UNITED_STATES, EUROPE, APAC, LATIN_AMERICA;
     }
 
+    /**
+     * Unique and numeric sequential value to each user
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    /**
+     * Value between 1 and 12 (indicating month of birth)
+     */
     @Column(name = "birthday")
     private int birthday;
+    /**
+     * Value between 0 and 5000, indicating how much a customer has spent with
+     * the company in euros
+     */
     @Column(name = "spend")
     private int spend;
+    /**
+     * ENUM of the customer region
+     */
     @Enumerated(EnumType.ORDINAL)
     @Column(name = "region")
     private region region;
